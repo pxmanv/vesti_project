@@ -1,0 +1,63 @@
+<% if @fabric.errors.any? %>
+  <% @fabric.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h1>Edit Fabric #<%= @fabric.id %></h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_fabric/<%= @fabric.id %>" class="form-horizontal">
+      <!-- Label and input for fabric -->
+      <div class="form-group">
+        <label for="fabric" class="col-sm-2 control-label">
+          Fabric
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="fabric" name="fabric" placeholder="Fabric" class="form-control" value="<%= @fabric.fabric %>">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input type="submit" value="Update Fabric" class="btn btn-primary">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-offset-3 col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Edit Fabric #<%= @fabric.id %></h3>
+      </div>
+      <div class="panel-body">
+        <form action="/update_fabric/<%= @fabric.id %>" class="form-horizontal">
+          <!-- Label and input for fabric -->
+          <div class="form-group">
+            <label for="fabric" class="col-sm-2 control-label">
+              Fabric
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="fabric" name="fabric" placeholder="Fabric" class="form-control" value="<%= @fabric.fabric %>">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <input type="submit" value="Update Fabric" class="btn btn-primary">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

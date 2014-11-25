@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>Fits</h1>
+</div>
+
+<p><a href="/fits/new" class="btn btn-primary">Add a New Fit</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Fit</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fits.each do |fit| %>
+      <tr>
+        <td><%= fit.fit %></td>
+        <td>
+          <a href="/fits/<%= fit.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/fits/<%= fit.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_fit/<%= fit.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

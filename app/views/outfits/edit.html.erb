@@ -1,0 +1,143 @@
+<% if @outfit.errors.any? %>
+  <% @outfit.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h1>Edit Outfit #<%= @outfit.id %></h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_outfit/<%= @outfit.id %>" class="form-horizontal">
+      <!-- Label and input for top_id -->
+      <div class="form-group">
+        <label for="top_id" class="col-sm-2 control-label">
+          Top
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="top_id" name="top_id" placeholder="Top" class="form-control" value="<%= @outfit.top_id %>">
+        </div>
+      </div>
+
+      <!-- Label and input for bottom_id -->
+      <div class="form-group">
+        <label for="bottom_id" class="col-sm-2 control-label">
+          Bottom
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="bottom_id" name="bottom_id" placeholder="Bottom" class="form-control" value="<%= @outfit.bottom_id %>">
+        </div>
+      </div>
+
+      <!-- Label and input for outerwear_id -->
+      <div class="form-group">
+        <label for="outerwear_id" class="col-sm-2 control-label">
+          Outerwear
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="outerwear_id" name="outerwear_id" placeholder="Outerwear" class="form-control" value="<%= @outfit.outerwear_id %>">
+        </div>
+      </div>
+
+      <!-- Label and input for shoe_id -->
+      <div class="form-group">
+        <label for="shoe_id" class="col-sm-2 control-label">
+          Shoe
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="shoe_id" name="shoe_id" placeholder="Shoe" class="form-control" value="<%= @outfit.shoe_id %>">
+        </div>
+      </div>
+
+      <!-- Label and input for accessory_id -->
+      <div class="form-group">
+        <label for="accessory_id" class="col-sm-2 control-label">
+          Accessory
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="accessory_id" name="accessory_id" placeholder="Accessory" class="form-control" value="<%= @outfit.accessory_id %>">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input type="submit" value="Update Outfit" class="btn btn-primary">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-offset-3 col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Edit Outfit #<%= @outfit.id %></h3>
+      </div>
+      <div class="panel-body">
+        <form action="/update_outfit/<%= @outfit.id %>" class="form-horizontal">
+          <!-- Label and input for top_id -->
+          <div class="form-group">
+            <label for="top_id" class="col-sm-2 control-label">
+              Top
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="top_id" name="top_id" placeholder="Top" class="form-control" value="<%= @outfit.top_id %>">
+            </div>
+          </div>
+
+          <!-- Label and input for bottom_id -->
+          <div class="form-group">
+            <label for="bottom_id" class="col-sm-2 control-label">
+              Bottom
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="bottom_id" name="bottom_id" placeholder="Bottom" class="form-control" value="<%= @outfit.bottom_id %>">
+            </div>
+          </div>
+
+          <!-- Label and input for outerwear_id -->
+          <div class="form-group">
+            <label for="outerwear_id" class="col-sm-2 control-label">
+              Outerwear
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="outerwear_id" name="outerwear_id" placeholder="Outerwear" class="form-control" value="<%= @outfit.outerwear_id %>">
+            </div>
+          </div>
+
+          <!-- Label and input for shoe_id -->
+          <div class="form-group">
+            <label for="shoe_id" class="col-sm-2 control-label">
+              Shoe
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="shoe_id" name="shoe_id" placeholder="Shoe" class="form-control" value="<%= @outfit.shoe_id %>">
+            </div>
+          </div>
+
+          <!-- Label and input for accessory_id -->
+          <div class="form-group">
+            <label for="accessory_id" class="col-sm-2 control-label">
+              Accessory
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="accessory_id" name="accessory_id" placeholder="Accessory" class="form-control" value="<%= @outfit.accessory_id %>">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <input type="submit" value="Update Outfit" class="btn btn-primary">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

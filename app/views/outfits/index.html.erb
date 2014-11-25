@@ -1,0 +1,48 @@
+<div class="page-header">
+  <h1>Outfits</h1>
+</div>
+
+<p><a href="/outfits/new" class="btn btn-primary">Add a New Outfit</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Top</th>
+      <th>Bottom</th>
+      <th>Outerwear</th>
+      <th>Shoe</th>
+      <th>Accessory</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @outfits.each do |outfit| %>
+      <tr>
+        <td><%= outfit.top_id %></td>
+        <td><%= outfit.bottom_id %></td>
+        <td><%= outfit.outerwear_id %></td>
+        <td><%= outfit.shoe_id %></td>
+        <td><%= outfit.accessory_id %></td>
+        <td>
+          <a href="/outfits/<%= outfit.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/outfits/<%= outfit.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_outfit/<%= outfit.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

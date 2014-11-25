@@ -1,0 +1,52 @@
+<div class="page-header">
+  <h1>Bottoms</h1>
+</div>
+
+<p><a href="/bottoms/new" class="btn btn-primary">Add a New Bottom</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Designer</th>
+      <th>Season</th>
+      <th>Fit</th>
+      <th>Color</th>
+      <th>Fabric</th>
+      <th>Occasion</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bottoms.each do |bottom| %>
+      <tr>
+        <td><%= bottom.name_id %></td>
+        <td><%= bottom.designer_id %></td>
+        <td><%= bottom.season_id %></td>
+        <td><%= bottom.fit_id %></td>
+        <td><%= bottom.color_id %></td>
+        <td><%= bottom.fabric_id %></td>
+        <td><%= bottom.occasion_id %></td>
+        <td>
+          <a href="/bottoms/<%= bottom.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/bottoms/<%= bottom.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_bottom/<%= bottom.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
