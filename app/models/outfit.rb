@@ -6,4 +6,8 @@ belongs_to :outerwear
 belongs_to :shoe
 belongs_to :accessory
 
+validates :top, :presence => true
+validates :bottom, :presence => true
+validates :shoe, :presence => true
+
 end

@@ -20,8 +20,7 @@
           Name
         </label>
         <div class="col-sm-10">
-          <input type="text" id="name_id" name="name_id" placeholder="Name" class="form-control" value="<%= @top.name_id %>">
-        </div>
+          <%= select_tag(:name_id, options_from_collection_for_select(Name.all, :id, :name, @top.name_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for designer_id -->
@@ -30,7 +29,7 @@
           Designer
         </label>
         <div class="col-sm-10">
-          <input type="text" id="designer_id" name="designer_id" placeholder="Designer" class="form-control" value="<%= @top.designer_id %>">
+          <%= select_tag(:designer_id, options_from_collection_for_select(Designer.all, :id, :designer, @top.designer_id), :class => "form-control") %>
         </div>
       </div>
 
@@ -40,7 +39,7 @@
           Season
         </label>
         <div class="col-sm-10">
-          <input type="text" id="season_id" name="season_id" placeholder="Season" class="form-control" value="<%= @top.season_id %>">
+          <%= select_tag(:season_id, options_from_collection_for_select(Season.all, :id, :season, @top.season_id), :class => "form-control") %>
         </div>
       </div>
 
@@ -50,7 +49,7 @@
           Fit
         </label>
         <div class="col-sm-10">
-          <input type="text" id="fit_id" name="fit_id" placeholder="Fit" class="form-control" value="<%= @top.fit_id %>">
+          <%= select_tag(:fit_id, options_from_collection_for_select(Fit.all, :id, :fit, @top.fit_id), :class => "form-control") %>
         </div>
       </div>
 
@@ -60,7 +59,7 @@
           Color
         </label>
         <div class="col-sm-10">
-          <input type="text" id="color_id" name="color_id" placeholder="Color" class="form-control" value="<%= @top.color_id %>">
+          <%= select_tag(:Color_id, options_from_collection_for_select(Color.all, :id, :color, @top.color_id), :class => "form-control") %>
         </div>
       </div>
 
@@ -70,7 +69,7 @@
           Fabric
         </label>
         <div class="col-sm-10">
-          <input type="text" id="fabric_id" name="fabric_id" placeholder="Fabric" class="form-control" value="<%= @top.fabric_id %>">
+          <%= select_tag(:fabric_id, options_from_collection_for_select(Fabric.all, :id, :fabric, @top.fabric_id), :class => "form-control") %>
         </div>
       </div>
 
@@ -80,7 +79,7 @@
           Occasion
         </label>
         <div class="col-sm-10">
-          <input type="text" id="occasion_id" name="occasion_id" placeholder="Occasion" class="form-control" value="<%= @top.occasion_id %>">
+          <%= select_tag(:occasion_id, options_from_collection_for_select(Occasion.all, :id, :occasion, @top.occasion_id), :class => "form-control") %>
         </div>
       </div>
 

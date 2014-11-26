@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root("outfits#index")
   # Routes for the Occasion resource:
   # CREATE
   get('/occasions/new', { :controller => 'occasions', :action => 'new' })
@@ -218,6 +219,10 @@ Rails.application.routes.draw do
 
   # DELETE
   get('/delete_outfit/:id', { :controller => 'outfits', :action => 'destroy' })
+
+  # About page:
+  get('/about', { :controller => 'about', :action => 'about'})
+
   #------------------------------
 
   # The priority is based upon order of creation: first created -> highest priority.

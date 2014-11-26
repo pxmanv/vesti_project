@@ -23,13 +23,13 @@
   <tbody>
     <% @accessories.each do |accessory| %>
       <tr>
-        <td><%= accessory.name_id %></td>
-        <td><%= accessory.designer_id %></td>
-        <td><%= accessory.season_id %></td>
-        <td><%= accessory.fit_id %></td>
-        <td><%= accessory.color_id %></td>
-        <td><%= accessory.fabric_id %></td>
-        <td><%= accessory.occasion_id %></td>
+        <td><%= accessory.name.name %></td>
+        <td><%= accessory.designer.designer %></td>
+        <td><%= accessory.season.season %></td>
+        <td><%= accessory.fit.fit %></td>
+        <td><%= accessory.color.try(:color) %></td>
+        <td><%= accessory.fabric.fabric %></td>
+        <td><%= accessory.occasion.occasion %></td>
         <td>
           <a href="/accessories/<%= accessory.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>

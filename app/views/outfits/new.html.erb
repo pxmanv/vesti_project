@@ -20,7 +20,7 @@
           Top
         </label>
         <div class="col-sm-10">
-          <input type="text" id="top_id" name="top_id" placeholder="Top" class="form-control" value="<%= @outfit.top_id %>">
+          <%= select_tag(:top_id, options_from_collection_for_select(Top.all, :id, :name, @outfit.top_id), :class => "form-control") %>
         </div>
       </div>
 
@@ -30,7 +30,7 @@
           Bottom
         </label>
         <div class="col-sm-10">
-          <input type="text" id="bottom_id" name="bottom_id" placeholder="Bottom" class="form-control" value="<%= @outfit.bottom_id %>">
+          <%= select_tag(:bottom_id, options_from_collection_for_select(Bottom.all, :id, :name, @outfit.bottom_id), :class => "form-control") %>
         </div>
       </div>
 
@@ -40,7 +40,7 @@
           Outerwear
         </label>
         <div class="col-sm-10">
-          <input type="text" id="outerwear_id" name="outerwear_id" placeholder="Outerwear" class="form-control" value="<%= @outfit.outerwear_id %>">
+          <%= select_tag(:outerwear_id, options_from_collection_for_select(Outerwear.all, :id, :name, @outfit.outerwear_id), :class => "form-control") %>
         </div>
       </div>
 
@@ -50,7 +50,7 @@
           Shoe
         </label>
         <div class="col-sm-10">
-          <input type="text" id="shoe_id" name="shoe_id" placeholder="Shoe" class="form-control" value="<%= @outfit.shoe_id %>">
+          <%= select_tag(:shoe_id, options_from_collection_for_select(Shoe.all, :id, :name, @outfit.shoe_id), :class => "form-control") %>
         </div>
       </div>
 
@@ -60,7 +60,7 @@
           Accessory
         </label>
         <div class="col-sm-10">
-          <input type="text" id="accessory_id" name="accessory_id" placeholder="Accessory" class="form-control" value="<%= @outfit.accessory_id %>">
+          <%= select_tag(:accessory_id, options_from_collection_for_select(Accessory.all, :id, :name, @outfit.accessory_id), :class => "form-control") %>
         </div>
       </div>
 

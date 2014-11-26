@@ -6,4 +6,6 @@ has_many :outerwears
 has_many :shoes
 has_many :accessories
 
+validates :name, :presence => true
+
 end

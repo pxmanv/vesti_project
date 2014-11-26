@@ -23,13 +23,13 @@
   <tbody>
     <% @outerwears.each do |outerwear| %>
       <tr>
-        <td><%= outerwear.name_id %></td>
-        <td><%= outerwear.designer_id %></td>
-        <td><%= outerwear.season_id %></td>
-        <td><%= outerwear.fit_id %></td>
-        <td><%= outerwear.color_id %></td>
-        <td><%= outerwear.fabric_id %></td>
-        <td><%= outerwear.occasion_id %></td>
+        <td><%= outerwear.name.name %></td>
+        <td><%= outerwear.designer.designer %></td>
+        <td><%= outerwear.season.season %></td>
+        <td><%= outerwear.fit.fit %></td>
+        <td><%= outerwear.color.try(:color) %></td>
+        <td><%= outerwear.fabric.fabric %></td>
+        <td><%= outerwear.occasion.occasion %></td>
         <td>
           <a href="/outerwears/<%= outerwear.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>

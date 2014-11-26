@@ -23,13 +23,14 @@
   <tbody>
     <% @bottoms.each do |bottom| %>
       <tr>
-        <td><%= bottom.name_id %></td>
-        <td><%= bottom.designer_id %></td>
-        <td><%= bottom.season_id %></td>
-        <td><%= bottom.fit_id %></td>
-        <td><%= bottom.color_id %></td>
-        <td><%= bottom.fabric_id %></td>
-        <td><%= bottom.occasion_id %></td>
+        <td><%= bottom.name.name %></td>
+        <td><%= bottom.designer.designer %></td>
+        <td><%= bottom.season.season %></td>
+        <td><%= bottom.fit.fit %></td>
+        <td><%= bottom.color.try(:color) %></td>
+        <td><%= bottom.fabric.fabric %></td>
+        <td><%= bottom.occasion.occasion %></td>
+
         <td>
           <a href="/bottoms/<%= bottom.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>

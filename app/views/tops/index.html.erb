@@ -23,13 +23,13 @@
   <tbody>
     <% @tops.each do |top| %>
       <tr>
-        <td><%= top.name_id %></td>
-        <td><%= top.designer_id %></td>
-        <td><%= top.season_id %></td>
-        <td><%= top.fit_id %></td>
-        <td><%= top.color_id %></td>
-        <td><%= top.fabric_id %></td>
-        <td><%= top.occasion_id %></td>
+      <td><%= top.name.name %></td>
+        <td><%= top.designer.designer %></td>
+        <td><%= top.season.season %></td>
+        <td><%= top.fit.fit %></td>
+        <td><%= top.color.try(:color) %></td>
+        <td><%= top.fabric.fabric %></td>
+        <td><%= top.occasion.occasion %></td>
         <td>
           <a href="/tops/<%= top.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>

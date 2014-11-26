@@ -21,11 +21,11 @@
   <tbody>
     <% @outfits.each do |outfit| %>
       <tr>
-        <td><%= outfit.top_id %></td>
-        <td><%= outfit.bottom_id %></td>
-        <td><%= outfit.outerwear_id %></td>
-        <td><%= outfit.shoe_id %></td>
-        <td><%= outfit.accessory_id %></td>
+        <td><%= outfit.top.name %></td>
+        <td><%= outfit.bottom.name %></td>
+        <td><%= outfit.outerwear %></td>
+        <td><%= outfit.shoe.name %></td>
+        <td><%= outfit.accessory.name %></td>
         <td>
           <a href="/outfits/<%= outfit.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>

@@ -23,13 +23,13 @@
   <tbody>
     <% @shoes.each do |shoe| %>
       <tr>
-        <td><%= shoe.name_id %></td>
-        <td><%= shoe.designer_id %></td>
-        <td><%= shoe.season_id %></td>
-        <td><%= shoe.fit_id %></td>
-        <td><%= shoe.color_id %></td>
-        <td><%= shoe.fabric_id %></td>
-        <td><%= shoe.occasion_id %></td>
+        <td><%= shoe.name.name %></td>
+        <td><%= shoe.designer.designer %></td>
+        <td><%= shoe.season.season %></td>
+        <td><%= shoe.fit.fit %></td>
+        <td><%= shoe.color.try(:color) %></td>
+        <td><%= shoe.fabric.fabric %></td>
+        <td><%= shoe.occasion.occasion %></td>
         <td>
           <a href="/shoes/<%= shoe.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>
