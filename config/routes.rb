@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root("outfits#index")
   # Routes for the Occasion resource:
   # CREATE

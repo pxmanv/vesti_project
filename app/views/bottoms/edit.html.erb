@@ -60,7 +60,7 @@
           Color
         </label>
         <div class="col-sm-10">
-          <%= select_tag(:Color_id, options_from_collection_for_select(Color.all, :id, :color, @bottom.color_id), :class => "form-control") %>
+          <%= select_tag(:color_id, options_from_collection_for_select(Color.all, :id, :color, @bottom.color_id), :class => "form-control") %>
         </div>
       </div>
 
