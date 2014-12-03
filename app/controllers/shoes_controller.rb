@@ -20,6 +20,7 @@ class ShoesController < ApplicationController
     @shoe.color_id = params[:color_id]
     @shoe.fabric_id = params[:fabric_id]
     @shoe.occasion_id = params[:occasion_id]
+    @shoe.image_url = params[:image_url]
 
     if @shoe.save
       redirect_to "/shoes", :notice => "Shoe created successfully."
@@ -42,6 +43,7 @@ class ShoesController < ApplicationController
     @shoe.color_id = params[:color_id]
     @shoe.fabric_id = params[:fabric_id]
     @shoe.occasion_id = params[:occasion_id]
+    @shoe.image_url = params[:image_url]
 
     if @shoe.save
       redirect_to "/shoes", :notice => "Shoe updated successfully."

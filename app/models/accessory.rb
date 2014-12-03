@@ -16,5 +16,6 @@ validates :fabric, :presence => true
 validates :occasion, :presence => true
 validates :designer, :presence => true
 validates :name, :presence => true
+validates :image, :presence => true
 
 end

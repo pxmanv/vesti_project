@@ -20,6 +20,7 @@ class AccessoriesController < ApplicationController
     @accessory.color_id = params[:color_id]
     @accessory.fabric_id = params[:fabric_id]
     @accessory.occasion_id = params[:occasion_id]
+    @accessory.image_url = params[:image_url]
 
     if @accessory.save
       redirect_to "/accessories", :notice => "Accessory created successfully."
@@ -42,6 +43,7 @@ class AccessoriesController < ApplicationController
     @accessory.color_id = params[:color_id]
     @accessory.fabric_id = params[:fabric_id]
     @accessory.occasion_id = params[:occasion_id]
+    @accessory.image_url = params[:image_url]
 
     if @accessory.save
       redirect_to "/accessories", :notice => "Accessory updated successfully."

@@ -20,6 +20,7 @@ class BottomsController < ApplicationController
     @bottom.color_id = params[:color_id]
     @bottom.fabric_id = params[:fabric_id]
     @bottom.occasion_id = params[:occasion_id]
+    @bottom.image_url = params[:image_url]
 
     if @bottom.save
       redirect_to "/bottoms", :notice => "Bottom created successfully."
@@ -42,6 +43,7 @@ class BottomsController < ApplicationController
     @bottom.color_id = params[:color_id]
     @bottom.fabric_id = params[:fabric_id]
     @bottom.occasion_id = params[:occasion_id]
+    @bottom.image_url = params[:image_url]
 
     if @bottom.save
       redirect_to "/bottoms", :notice => "Bottom updated successfully."

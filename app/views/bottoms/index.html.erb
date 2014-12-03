@@ -14,6 +14,7 @@
       <th>Color</th>
       <th>Fabric</th>
       <th>Occasion</th>
+      <th>Image</th>
       <th></th>
       <th></th>
       <th></th>
@@ -30,6 +31,7 @@
         <td><%= bottom.color.try(:color) %></td>
         <td><%= bottom.fabric.fabric %></td>
         <td><%= bottom.occasion.occasion %></td>
+        <td><img src="<%= bottom.image_url %>" width="30"></td>
 
         <td>
           <a href="/bottoms/<%= bottom.id %>" class="btn btn-primary">

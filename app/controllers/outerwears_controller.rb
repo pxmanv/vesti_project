@@ -20,6 +20,7 @@ class OuterwearsController < ApplicationController
     @outerwear.color_id = params[:color_id]
     @outerwear.fabric_id = params[:fabric_id]
     @outerwear.occasion_id = params[:occasion_id]
+    @outerwear.image_url = params[:image_url]
 
     if @outerwear.save
       redirect_to "/outerwears", :notice => "Outerwear created successfully."
@@ -42,6 +43,7 @@ class OuterwearsController < ApplicationController
     @outerwear.color_id = params[:color_id]
     @outerwear.fabric_id = params[:fabric_id]
     @outerwear.occasion_id = params[:occasion_id]
+    @outerwear.image_url = params[:image_url]
 
     if @outerwear.save
       redirect_to "/outerwears", :notice => "Outerwear updated successfully."

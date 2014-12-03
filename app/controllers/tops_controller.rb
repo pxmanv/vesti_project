@@ -20,6 +20,7 @@ class TopsController < ApplicationController
     @top.color_id = params[:color_id]
     @top.fabric_id = params[:fabric_id]
     @top.occasion_id = params[:occasion_id]
+    @top.image_url = params[:image_url]
 
     if @top.save
       redirect_to "/tops", :notice => "Top created successfully."
@@ -42,6 +43,7 @@ class TopsController < ApplicationController
     @top.color_id = params[:color_id]
     @top.fabric_id = params[:fabric_id]
     @top.occasion_id = params[:occasion_id]
+    @top.image_url = params[:image_url]
 
     if @top.save
       redirect_to "/tops", :notice => "Top updated successfully."
