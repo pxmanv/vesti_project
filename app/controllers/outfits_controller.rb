@@ -1,4 +1,16 @@
 class OutfitsController < ApplicationController
+
+  def select_top
+    @tops = Top.all
+  end
+
+  def add_top
+    cookies[:top_id] = params[:top_id]
+
+    redirect_to "/outfits/new"
+
+  end
+
   def index
     @outfits = Outfit.all
   end
@@ -9,6 +21,9 @@ class OutfitsController < ApplicationController
 
   def new
     @outfit = Outfit.new
+
+    @top = Top.find(cookies[:top_id])
+
   end
 
   def create

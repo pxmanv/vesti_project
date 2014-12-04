@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root("outfits#index")
+
+  get('/outfits/tops/select', { :controller => 'outfits', :action => 'select_top'})
+  get('/outfits/tops/add', { :controller => 'outfits', :action => 'add_top'})
+
   # Routes for the Occasion resource:
   # CREATE
   get('/occasions/new', { :controller => 'occasions', :action => 'new' })

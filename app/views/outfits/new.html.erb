@@ -1,10 +1,10 @@
 <% if @outfit.errors.any? %>
-  <% @outfit.errors.full_messages.each do |message| %>
-    <div class="alert alert-dismissable alert-danger">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <%= message %>
-    </div>
-  <% end %>
+<% @outfit.errors.full_messages.each do |message| %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <%= message %>
+</div>
+<% end %>
 <% end %>
 
 <div class="page-header">
@@ -73,6 +73,12 @@
   </div>
 </div>
 
+<% if @top %>
+<img src="<%= @top.image_url %>" width="100">
+<% else %>
+<div>No top displayed.</div>
+<% end %>
+
 <div class="row">
   <div class="col-md-offset-3 col-md-6">
     <div class="panel panel-default">
@@ -87,7 +93,7 @@
               Top
             </label>
             <div class="col-sm-10">
-              <input type="text" id="top_id" name="top_id" placeholder="Top" class="form-control" value="<%= @outfit.top_id %>">
+              <input type="text" id="top_id" name="top_id" placeholder="Top" class="form-control" value="<%= @top.id %>">
             </div>
           </div>
 

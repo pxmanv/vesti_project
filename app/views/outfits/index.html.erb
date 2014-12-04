@@ -20,28 +20,29 @@
 
   <tbody>
     <% @outfits.each do |outfit| %>
-      <tr>
-        <td><%= outfit.top.name %></td>
-        <td><%= outfit.bottom.name %></td>
-        <td><%= outfit.outerwear %></td>
-        <td><%= outfit.shoe.name %></td>
-        <td><%= outfit.accessory.name %></td>
-        <td>
-          <a href="/outfits/<%= outfit.id %>" class="btn btn-primary">
-            <i class="fa fa-search-plus"></i>
-          </a>
-        </td>
-        <td>
-          <a href="/outfits/<%= outfit.id %>/edit" class="btn btn-warning">
-            <i class="fa fa-edit"></i>
-          </a>
-        </td>
-        <td>
-          <a href="/delete_outfit/<%= outfit.id %>" class="btn btn-danger">
-            <i class="fa fa-trash-o"></i>
-          </a>
-        </td>
-      </tr>
+    <tr>
+      <td><img src="<%= outfit.top.image_url %>" width="100"></td>
+      <td><img src="<%= outfit.bottom.image_url %>" width="100"></td>
+      <td><img src="<%= outfit.outerwear.image_url %>" width="100"></td>
+      <td><img src="<%= outfit.shoe.image_url %>" width="100"></td>
+      <td><img src="<%= outfit.accessory.image_url %>" width="100"></td>
+
+      <td>
+        <a href="/outfits/<%= outfit.id %>" class="btn btn-primary">
+          <i class="fa fa-search-plus"></i>
+        </a>
+      </td>
+      <td>
+        <a href="/outfits/<%= outfit.id %>/edit" class="btn btn-warning">
+          <i class="fa fa-edit"></i>
+        </a>
+      </td>
+      <td>
+        <a href="/delete_outfit/<%= outfit.id %>" class="btn btn-danger">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </td>
+    </tr>
     <% end %>
   </tbody>
 </table>
