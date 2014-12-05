@@ -11,59 +11,59 @@
   <h1>Add Outfit</h1>
 </div>
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-md-12">
     <form action="/create_outfit" class="form-horizontal">
       <!-- Label and input for top_id -->
-      <div class="form-group">
+    <!--   <div class="form-group">
         <label for="top_id" class="col-sm-2 control-label">
           Top
         </label>
         <div class="col-sm-10">
           <%= select_tag(:top_id, options_from_collection_for_select(Top.all, :id, :name, @outfit.top_id), :class => "form-control") %>
         </div>
-      </div>
+      </div> -->
 
       <!-- Label and input for bottom_id -->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="bottom_id" class="col-sm-2 control-label">
           Bottom
         </label>
         <div class="col-sm-10">
           <%= select_tag(:bottom_id, options_from_collection_for_select(Bottom.all, :id, :name, @outfit.bottom_id), :class => "form-control") %>
         </div>
-      </div>
+      </div> -->
 
       <!-- Label and input for outerwear_id -->
-      <div class="form-group">
+   <!--    <div class="form-group">
         <label for="outerwear_id" class="col-sm-2 control-label">
           Outerwear
         </label>
         <div class="col-sm-10">
           <%= select_tag(:outerwear_id, options_from_collection_for_select(Outerwear.all, :id, :name, @outfit.outerwear_id), :class => "form-control") %>
         </div>
-      </div>
+      </div> -->
 
       <!-- Label and input for shoe_id -->
-      <div class="form-group">
+<!--       <div class="form-group">
         <label for="shoe_id" class="col-sm-2 control-label">
           Shoe
         </label>
         <div class="col-sm-10">
           <%= select_tag(:shoe_id, options_from_collection_for_select(Shoe.all, :id, :name, @outfit.shoe_id), :class => "form-control") %>
-        </div>
+        </div> -->
       </div>
 
       <!-- Label and input for accessory_id -->
-      <div class="form-group">
+ <!--      <div class="form-group">
         <label for="accessory_id" class="col-sm-2 control-label">
           Accessory
         </label>
         <div class="col-sm-10">
           <%= select_tag(:accessory_id, options_from_collection_for_select(Accessory.all, :id, :name, @outfit.accessory_id), :class => "form-control") %>
-        </div>
+        </div> -->
       </div>
-
+<!--
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <input type="submit" value="Create Outfit" class="btn btn-primary">
@@ -71,79 +71,193 @@
       </div>
     </form>
   </div>
-</div>
+</div> -->
 
-<% if @top %>
-<img src="<%= @top.image_url %>" width="100">
-<% else %>
-<div>No top displayed.</div>
-<% end %>
+<div class = "container">
 
-<div class="row">
-  <div class="col-md-offset-3 col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Add Outfit</h3>
+  <div class="row">
+    <% if @top %>
+    <div class="col-md-3">
+      <div class="thumbnail">
+        <img src="<%= @top.image_url %>" alt="...">
+        <div class="caption">
+          <h6><%= @top.designer.designer %> <%= @top.name.name %></h6>
+          <p>#<%= @top.season.season.downcase %> #<%= @top.fit.fit.downcase %> #<%= @top.fabric.fabric.downcase %>
+            <a href="/outfits/tops/select" class="btn btn-default" role="button">Select new top</a> </p>
+          </div>
+        </div>
       </div>
-      <div class="panel-body">
-        <form action="/create_outfit" class="form-horizontal">
-          <!-- Label and input for top_id -->
-          <div class="form-group">
-            <label for="top_id" class="col-sm-2 control-label">
-              Top
-            </label>
-            <div class="col-sm-10">
-              <input type="text" id="top_id" name="top_id" placeholder="Top" class="form-control" value="<%= @top.id %>">
-            </div>
+      <% else %>
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <div class="caption">
+            <p>No top displayed.</p>
+            <p><a href="/outfits/tops/select" class="btn btn-default" role="button">Select top</a> </p>
           </div>
-
-          <!-- Label and input for bottom_id -->
-          <div class="form-group">
-            <label for="bottom_id" class="col-sm-2 control-label">
-              Bottom
-            </label>
-            <div class="col-sm-10">
-              <input type="text" id="bottom_id" name="bottom_id" placeholder="Bottom" class="form-control" value="<%= @outfit.bottom_id %>">
-            </div>
-          </div>
-
-          <!-- Label and input for outerwear_id -->
-          <div class="form-group">
-            <label for="outerwear_id" class="col-sm-2 control-label">
-              Outerwear
-            </label>
-            <div class="col-sm-10">
-              <input type="text" id="outerwear_id" name="outerwear_id" placeholder="Outerwear" class="form-control" value="<%= @outfit.outerwear_id %>">
-            </div>
-          </div>
-
-          <!-- Label and input for shoe_id -->
-          <div class="form-group">
-            <label for="shoe_id" class="col-sm-2 control-label">
-              Shoe
-            </label>
-            <div class="col-sm-10">
-              <input type="text" id="shoe_id" name="shoe_id" placeholder="Shoe" class="form-control" value="<%= @outfit.shoe_id %>">
-            </div>
-          </div>
-
-          <!-- Label and input for accessory_id -->
-          <div class="form-group">
-            <label for="accessory_id" class="col-sm-2 control-label">
-              Accessory
-            </label>
-            <div class="col-sm-10">
-              <input type="text" id="accessory_id" name="accessory_id" placeholder="Accessory" class="form-control" value="<%= @outfit.accessory_id %>">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <input type="submit" value="Create Outfit" class="btn btn-primary">
-            </div>
-          </div>
-        </form>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
+      <% end %>
+
+      <% if @bottom %>
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <img src="<%= @bottom.image_url %>" alt="...">
+          <div class="caption">
+            <h6><%= @bottom.designer.designer %> <%= @bottom.name.name %></h6>
+            <p>#<%= @bottom.season.season.downcase %> #<%= @bottom.fit.fit.downcase %> #<%= @bottom.fabric.fabric.downcase %>
+              <a href="/outfits/bottoms/select" class="btn btn-default" role="button">Select new bottom</a> </p>
+            </div>
+          </div>
+        </div>
+        <% else %>
+        <div class="col-md-3">
+          <div class="thumbnail">
+            <div class="caption">
+              <p>No bottom displayed.</p>
+              <p><a href="/outfits/bottoms/select" class="btn btn-default" role="button">Select bottom</a> </p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+
+        <% if @shoe %>
+        <div class="col-md-3">
+          <div class="thumbnail">
+            <img src="<%= @shoe.image_url %>" alt="...">
+            <div class="caption">
+              <h6><%= @shoe.designer.designer %> <%= @shoe.name.name %></h6>
+              <p>#<%= @shoe.season.season.downcase %> #<%= @shoe.fit.fit.downcase %> #<%= @shoe.fabric.fabric.downcase %>
+                <a href="/outfits/shoes/select" class="btn btn-default" role="button">Select new shoes</a> </p>
+              </div>
+            </div>
+          </div>
+          <% else %>
+          <div class="col-md-3">
+            <div class="thumbnail">
+              <div class="caption">
+                <p>No shoes displayed.</p>
+                <p><a href="/outfits/shoes/select" class="btn btn-default" role="button">Select shoes</a> </p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+
+          <div class="col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Selections</h3>
+              </div>
+              <div class="panel-body">
+                <form action="/create_outfit" class="form-horizontal">
+                  <!-- Label and input for top_id -->
+                  <div class="form-group">
+                    <label for="top_id" class="col-sm-2 control-label">
+                      Top
+                    </label>
+                    <div class="col-sm-7 col-sm-offset-2">
+                      <input type="text" id="top_id" name="top_id" placeholder="ID" class="form-control" value="<%= @top.id %>">
+                    </div>
+                  </div>
+
+                  <!-- Label and input for bottom_id -->
+                  <div class="form-group">
+                    <label for="bottom_id" class="col-sm-2 control-label">
+                      Bottom
+                    </label>
+                    <div class="col-sm-7 col-sm-offset-2">
+                      <input type="text" id="bottom_id" name="bottom_id" placeholder="ID" class="form-control" value="<%= @bottom_id %>">
+                    </div>
+                  </div>
+
+                  <!-- Label and input for outerwear_id -->
+                  <div class="form-group">
+                    <label for="outerwear_id" class="col-sm-2 control-label">
+                      Outerwear
+                    </label>
+                    <div class="col-sm-7 col-sm-offset-2">
+                      <input type="text" id="outerwear_id" name="outerwear_id" placeholder="ID" class="form-control" value="<%= @outerwear_id %>">
+                    </div>
+                  </div>
+
+                  <!-- Label and input for shoe_id -->
+                  <div class="form-group">
+                    <label for="shoe_id" class="col-sm-2 control-label">
+                      Shoe
+                    </label>
+                    <div class="col-sm-7 col-sm-offset-2">
+                      <input type="text" id="shoe_id" name="shoe_id" placeholder="ID" class="form-control" value="<%= @shoe_id %>">
+                    </div>
+                  </div>
+
+                  <!-- Label and input for accessory_id -->
+                  <div class="form-group">
+                    <label for="accessory_id" class="col-sm-2 control-label">
+                      Accessory
+                    </label>
+                    <div class="col-sm-7 col-sm-offset-2">
+                      <input type="text" id="accessory_id" name="accessory_id" placeholder="ID" class="form-control" value="<%= @accessory_id %>">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <input type="submit" value="Create Outfit" class="btn btn-primary">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <% if @outerwear %>
+          <div class="col-md-3">
+            <div class="thumbnail">
+              <img src="<%= @outerwear.image_url %>" alt="...">
+              <div class="caption">
+                <h6><%= @outerwear.designer.designer %> <%= @outerwear.name.name %></h6>
+                <p>#<%= @outerwear.season.season.downcase %> #<%= @outerwear.fit.fit.downcase %> #<%= @outerwear.fabric.fabric.downcase %>
+                  <a href="/outfits/outerwears/select" class="btn btn-default" role="button">Select new outerwear</a> </p>
+                </div>
+              </div>
+            </div>
+            <% else %>
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <div class="caption">
+                  <p>No outerwear displayed.</p>
+                  <p><a href="/outfits/outerwears/select" class="btn btn-default" role="button">Select outerwear</a> </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+
+          <% if @accessory %>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <img src="<%= @accessory.image_url %>" alt="...">
+                <div class="caption">
+                  <h6><%= @accessory.designer.designer %> <%= @accessory.name.name %></h6>
+                  <p>#<%= @accessory.season.season.downcase %> #<%= @accessory.fit.fit.downcase %> #<%= @accessory.fabric.fabric.downcase %>
+                    <a href="/outfits/accessories/select" class="btn btn-default" role="button">Select new accessories</a> </p>
+                  </div>
+                </div>
+              </div>
+              <% else %>
+              <div class="col-md-3">
+                <div class="thumbnail">
+                  <div class="caption">
+                    <p>No accessories displayed.</p>
+                    <p><a href="/outfits/accessories/select" class="btn btn-default" role="button">Select accessories</a> </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+
+        </div>

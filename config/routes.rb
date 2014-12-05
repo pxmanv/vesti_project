@@ -1,9 +1,22 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root("outfits#index")
 
   get('/outfits/tops/select', { :controller => 'outfits', :action => 'select_top'})
   get('/outfits/tops/add', { :controller => 'outfits', :action => 'add_top'})
+
+  get('/outfits/bottoms/select', { :controller => 'outfits', :action => 'select_bottom'})
+  get('/outfits/bottoms/add', { :controller => 'outfits', :action => 'add_bottom'})
+
+  get('/outfits/shoes/select', { :controller => 'outfits', :action => 'select_shoe'})
+  get('/outfits/shoes/add', { :controller => 'outfits', :action => 'add_shoe'})
+
+  get('/outfits/outerwears/select', { :controller => 'outfits', :action => 'select_outerwear'})
+  get('/outfits/outerwears/add', { :controller => 'outfits', :action => 'add_outerwear'})
+
+  get('/outfits/accessories/select', { :controller => 'outfits', :action => 'select_accessory'})
+  get('/outfits/accessories/add', { :controller => 'outfits', :action => 'add_accessory'})
 
   # Routes for the Occasion resource:
   # CREATE

@@ -2,10 +2,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1>Tops Dashboard</h1>
+          <h1>Bottoms Dashboard</h1>
         </div>
       </div>
-<!--       <div class="row">
+      <!-- <div class="row">
         <div class="col-md-9">
           <div class="btn-group btn-group-justified">
             <div class="btn-group">
@@ -46,14 +46,14 @@
 
         <div class="row">
           <div class="col-md-9">
-            <% @tops.each do |top| %>
+            <% @bottoms.each do |bottom| %>
             <div class="col-md-4">
               <div class="thumbnail">
-                <img src="<%= top.image_url %>" alt="...">
+                <img src="<%= bottom.image_url %>" alt="...">
                 <div class="caption">
-                  <h6><%= top.designer.designer %> <%= top.name.name %></h6>
-                  <p>#<%= top.season.season.downcase %> #<%= top.fit.fit.downcase %> #<%= top.color.color.downcase %> #<%= top.fabric.fabric.downcase %> #<%= top.occasion.occasion.downcase %></p>
-                  <p><a href="/outfits/tops/add?top_id=<%= top.id %>" class="btn btn-default" role="button">Select</a> </p>
+                  <h6><%= bottom.designer.designer %> <%= bottom.name.name %></h6>
+                  <p>#<%= bottom.season.season.downcase %> #<%= bottom.fit.fit.downcase %> #<%= bottom.color.color.downcase %> #<%= bottom.fabric.fabric.downcase %> #<%= bottom.occasion.occasion.downcase %></p>
+                  <p><a href="/outfits/bottoms/add?bottom_id=<%= bottom.id %>" class="btn btn-default" role="button">Select</a> </p>
                 </div>
               </div>
             </div>
@@ -69,11 +69,21 @@
 
                 <!-- Label and input for bottom_id -->
                 <div class="form-group">
-                  <label for="bottom_id" class="col-sm-2 control-label">
-                    Bottom
+                  <label for="top_id" class="col-sm-2 control-label">
+                    Top
                   </label>
                   <div class="col-sm-7 col-sm-offset-2">
-                    <input type="text" id="bottom_id" name="bottom_id" placeholder="ID" class="form-control" value="<%= @bottom_id %>">
+                    <input type="text" id="top_id" name="top_id" placeholder="ID" class="form-control" value="<%= @top_id %>">
+                  </div>
+                </div>
+
+                <!-- Label and input for bottom_id -->
+                <div class="form-group">
+                  <label for="shoe_id" class="col-sm-2 control-label">
+                    Shoe
+                  </label>
+                  <div class="col-sm-7 col-sm-offset-2">
+                    <input type="text" id="shoe_id" name="shoe_id" placeholder="ID" class="form-control" value="<%= @shoe_id %>">
                   </div>
                 </div>
 
@@ -84,16 +94,6 @@
                   </label>
                   <div class="col-sm-7 col-sm-offset-2">
                     <input type="text" id="outerwear_id" name="outerwear_id" placeholder="ID" class="form-control" value="<%= @outerwear_id %>">
-                  </div>
-                </div>
-
-                <!-- Label and input for shoe_id -->
-                <div class="form-group">
-                  <label for="shoe_id" class="col-sm-2 control-label">
-                    Shoe
-                  </label>
-                  <div class="col-sm-7 col-sm-offset-2">
-                    <input type="text" id="shoe_id" name="shoe_id" placeholder="ID" class="form-control" value="<%= @shoe_id %>">
                   </div>
                 </div>
 
