@@ -1,11 +1,20 @@
 class OutfitsController < ApplicationController
 
+  def clear
+    cookies[:top_id] = nil
+    cookies[:bottom_id] = nil
+    cookies[:shoe_id] = nil
+    cookies[:outerwear_id] = nil
+    cookies[:accessory_id] = nil
+    redirect_to "/outfits/new"
+  end
+
   def select_top
     @tops = Top.all
-    @bottom = Bottom.find(cookies[:bottom_id])
-    @shoe = Shoe.find(cookies[:shoe_id])
-    @outerwear = Outerwear.find(cookies[:outerwear_id])
-    @accessory = Accessory.find(cookies[:accessory_id])
+    @bottom = Bottom.find_by(:id => cookies[:bottom_id])
+    @shoe = Shoe.find_by(:id => cookies[:shoe_id])
+    @outerwear = Outerwear.find_by(:id => cookies[:outerwear_id])
+    @accessory = Accessory.find_by(:id => cookies[:accessory_id])
   end
 
   def add_top
@@ -15,10 +24,10 @@ class OutfitsController < ApplicationController
 
   def select_bottom
     @bottoms = Bottom.all
-    @top = Top.find(cookies[:top_id])
-    @shoe = Shoe.find(cookies[:shoe_id])
-    @outerwear = Outerwear.find(cookies[:outerwear_id])
-    @accessory = Accessory.find(cookies[:accessory_id])
+    @top = Top.find_by(:id => cookies[:top_id])
+    @shoe = Shoe.find_by(:id => cookies[:shoe_id])
+    @outerwear = Outerwear.find_by(:id => cookies[:outerwear_id])
+    @accessory = Accessory.find_by(:id => cookies[:accessory_id])
   end
 
   def add_bottom
@@ -28,10 +37,10 @@ class OutfitsController < ApplicationController
 
   def select_shoe
     @shoes = Shoe.all
-    @top = Top.find(cookies[:top_id])
-    @bottom = Bottom.find(cookies[:bottom_id])
-    @outerwear = Outerwear.find(cookies[:outerwear_id])
-    @accessory = Accessory.find(cookies[:accessory_id])
+    @top = Top.find_by(:id => cookies[:top_id])
+    @bottom = Bottom.find_by(:id => cookies[:bottom_id])
+    @outerwear = Outerwear.find_by(:id => cookies[:outerwear_id])
+    @accessory = Accessory.find_by(:id => cookies[:accessory_id])
   end
 
   def add_shoe
@@ -41,10 +50,10 @@ class OutfitsController < ApplicationController
 
   def select_outerwear
     @outerwears = Outerwear.all
-    @top = Top.find(cookies[:top_id])
-    @bottom = Bottom.find(cookies[:bottom_id])
-    @shoe = Shoe.find(cookies[:shoe_id])
-    @accessory = Accessory.find(cookies[:accessory_id])
+    @top = Top.find_by(:id => cookies[:top_id])
+    @bottom = Bottom.find_by(:id => cookies[:bottom_id])
+    @shoe = Shoe.find_by(:id => cookies[:shoe_id])
+    @accessory = Accessory.find_by(:id => cookies[:accessory_id])
   end
 
   def add_outerwear
@@ -54,10 +63,10 @@ class OutfitsController < ApplicationController
 
   def select_accessory
     @accessories = Accessory.all
-    @top = Top.find(cookies[:top_id])
-    @bottom = Bottom.find(cookies[:bottom_id])
-    @shoe = Shoe.find(cookies[:shoe_id])
-    @outerwear = Outerwear.find(cookies[:outerwear_id])
+    @top = Top.find_by(:id => cookies[:top_id])
+    @bottom = Bottom.find_by(:id => cookies[:bottom_id])
+    @shoe = Shoe.find_by(:id => cookies[:shoe_id])
+    @outerwear = Outerwear.find_by(:id => cookies[:outerwear_id])
   end
 
   def add_accessory
@@ -76,11 +85,11 @@ class OutfitsController < ApplicationController
 
   def new
     @outfit = Outfit.new
-    @top = Top.find(cookies[:top_id])
-    @bottom = Bottom.find(cookies[:bottom_id])
-    @shoe = Shoe.find(cookies[:shoe_id])
-    @outerwear = Outerwear.find(cookies[:outerwear_id])
-    @accessory = Accessory.find(cookies[:accessory_id])
+    @top = Top.find_by(:id => cookies[:top_id])
+    @bottom = Bottom.find_by(:id => cookies[:bottom_id])
+    @shoe = Shoe.find_by(:id => cookies[:shoe_id])
+    @outerwear = Outerwear.find_by(:id => cookies[:outerwear_id])
+    @accessory = Accessory.find_by(:id => cookies[:accessory_id])
   end
 
   def create

@@ -1,10 +1,9 @@
   <body>
+    <div class="page-header">
+      <h1>Tops Dashboard</h1>
+    </div>
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1>Tops Dashboard</h1>
-        </div>
-      </div>
+
 <!--       <div class="row">
         <div class="col-md-9">
           <div class="btn-group btn-group-justified">
@@ -47,7 +46,7 @@
         <div class="row">
           <div class="col-md-9">
             <% @tops.each do |top| %>
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="thumbnail">
                 <img src="<%= top.image_url %>" alt="...">
                 <div class="caption">
@@ -67,60 +66,96 @@
               </div>
               <div class="panel-body">
 
-                <!-- Label and input for bottom_id -->
+                <% if @bottom.present? %>
                 <div class="form-group">
                   <label for="bottom_id" class="col-sm-2 control-label">
                     Bottom
                   </label>
                   <div class="col-sm-7 col-sm-offset-2">
-                    <input type="text" id="bottom_id" name="bottom_id" placeholder="ID" class="form-control" value="<%= @bottom_id %>">
+                    <input type="text" id="bottom_id" name="bottom_id" placeholder="ID" class="form-control" value="<%= @bottom.id %>">
                   </div>
                 </div>
+                <% else %>
+                <div class="form-group">
+                  <label for="bottom_id" class="col-sm-2 control-label">
+                    Bottom
+                  </label>
+                  <div class="col-sm-7 col-sm-offset-2">
+                    <input type="text" id="bottom_id" name="bottom_id" placeholder="ID" class="form-control" value="None">
+                  </div>
+                </div>
+                <% end  %>
 
-                <!-- Label and input for outerwear_id -->
+                <% if @outerwear.present? %>
                 <div class="form-group">
                   <label for="outerwear_id" class="col-sm-2 control-label">
                     Outerwear
                   </label>
                   <div class="col-sm-7 col-sm-offset-2">
-                    <input type="text" id="outerwear_id" name="outerwear_id" placeholder="ID" class="form-control" value="<%= @outerwear_id %>">
+                    <input type="text" id="outerwear_id" name="outerwear_id" placeholder="ID" class="form-control" value="<%= @outerwear.id %>">
                   </div>
                 </div>
+                <% else %>
+                <div class="form-group">
+                  <label for="outerwear_id" class="col-sm-2 control-label">
+                    Outerwear
+                  </label>
+                  <div class="col-sm-7 col-sm-offset-2">
+                    <input type="text" id="outerwear_id" name="outerwear_id" placeholder="ID" class="form-control" value="None">
+                  </div>
+                </div>
+                <% end  %>
 
-                <!-- Label and input for shoe_id -->
+                <% if @shoe.present? %>
                 <div class="form-group">
                   <label for="shoe_id" class="col-sm-2 control-label">
                     Shoe
                   </label>
                   <div class="col-sm-7 col-sm-offset-2">
-                    <input type="text" id="shoe_id" name="shoe_id" placeholder="ID" class="form-control" value="<%= @shoe_id %>">
+                    <input type="text" id="shoe_id" name="shoe_id" placeholder="ID" class="form-control" value="<%= @shoe.id %>">
                   </div>
                 </div>
+                <% else %>
+                <div class="form-group">
+                  <label for="shoe_id" class="col-sm-2 control-label">
+                    Shoe
+                  </label>
+                  <div class="col-sm-7 col-sm-offset-2">
+                    <input type="text" id="shoe_id" name="shoe_id" placeholder="ID" class="form-control" value="None">
+                  </div>
+                </div>
+                <% end  %>
 
-                <!-- Label and input for accessory_id -->
+                <% if @accessory.present? %>
                 <div class="form-group">
                   <label for="accessory_id" class="col-sm-2 control-label">
                     Accessory
                   </label>
                   <div class="col-sm-7 col-sm-offset-2">
-                    <input type="text" id="accessory_id" name="accessory_id" placeholder="ID" class="form-control" value="<%= @accessory_id %>">
+                    <input type="text" id="accessory_id" name="accessory_id" placeholder="ID" class="form-control" value="<%= @accessory.id %>">
                   </div>
                 </div>
+                <% else %>
+                <div class="form-group">
+                  <label for="accessory_id" class="col-sm-2 control-label">
+                    Accessory
+                  </label>
+                  <div class="col-sm-7 col-sm-offset-2">
+                    <input type="text" id="accessory_id" name="accessory_id" placeholder="ID" class="form-control" value="None">
+                  </div>
+                </div>
+                <% end  %>
+
+                <ul class="nav navbar-nav navbar-right">
+                  <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Search for item...">
+                    </div>
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                  </form>
+                </ul>
               </div>
             </div>
           </div>
-
-          <div class="col-md-3">
-            <ul class="nav navbar-nav navbar-right">
-              <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search for item...">
-                </div>
-                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-              </form>
-            </ul>
-          </div>
         </div>
-      </div>
-    </div>
-  </body>
+      </body>

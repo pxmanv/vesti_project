@@ -1,10 +1,8 @@
   <body>
+    <div class="page-header">
+      <h1>Outerwear Dashboard</h1>
+    </div>
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1>Outerwear Dashboard</h1>
-        </div>
-      </div>
       <!-- <div class="row">
         <div class="col-md-9">
           <div class="btn-group btn-group-justified">
@@ -47,7 +45,7 @@
         <div class="row">
           <div class="col-md-9">
             <% @outerwears.each do |outerwear| %>
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="thumbnail">
                 <img src="<%= outerwear.image_url %>" alt="...">
                 <div class="caption">
@@ -110,17 +108,16 @@
             </div>
           </div>
 
-          <div class="col-md-3">
-            <ul class="nav navbar-nav navbar-right">
-              <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search for item...">
-                </div>
-                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-              </form>
-            </ul>
-          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search for item...">
+              </div>
+              <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+            </form>
+          </ul>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>

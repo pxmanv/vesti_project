@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   root("outfits#index")
 
+  get('/home', { :controller => 'home', :action => 'home'})
+  get('/contact', { :controller => 'contact', :action => 'contact'})
+  get('/team', { :controller => 'team', :action => 'team'})
+
+  get('/inventory', { :controller => 'inventory', :action => 'inventory'})
+
   get('/outfits/tops/select', { :controller => 'outfits', :action => 'select_top'})
   get('/outfits/tops/add', { :controller => 'outfits', :action => 'add_top'})
 
@@ -17,6 +23,8 @@ Rails.application.routes.draw do
 
   get('/outfits/accessories/select', { :controller => 'outfits', :action => 'select_accessory'})
   get('/outfits/accessories/add', { :controller => 'outfits', :action => 'add_accessory'})
+
+  get('/outfits/select/clear', { :controller => 'outfits', :action => 'clear'})
 
   # Routes for the Occasion resource:
   # CREATE

@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: none;
+}
+
+.full {
+  background: url(http://jamiedanielali.files.wordpress.com/2013/08/za2.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.white, .white a {
+  color: #fff;
+}
+
+.title, .title a {
+  color: #b31;
+}
+
+.navbar-inverse {
+  background-color: #F8F8F8;
+}
+
+.offset1 {
+  margin-top: 200px;
+}
+
+.offset2 {
+  margin-top: 100px;
+}
+
+.offset3 {
+  margin-top: 50px;
+}
+
+.row-centered {
+  text-align: center;
+}
