@@ -80,6 +80,11 @@ class OutfitsController < ApplicationController
 
   def show
     @outfit = Outfit.find(params[:id])
+    @top = Top.find_by(:id => cookies[:top_id])
+    @bottom = Bottom.find_by(:id => cookies[:bottom_id])
+    @shoe = Shoe.find_by(:id => cookies[:shoe_id])
+    @outerwear = Outerwear.find_by(:id => cookies[:outerwear_id])
+    @accessory = Accessory.find_by(:id => cookies[:accessory_id])
 
   end
 
