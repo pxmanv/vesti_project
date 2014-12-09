@@ -4,10 +4,15 @@ Rails.application.routes.draw do
   root("outfits#index")
 
   get('/home', { :controller => 'home', :action => 'home'})
-  get('/contact', { :controller => 'contact', :action => 'contact'})
   get('/team', { :controller => 'team', :action => 'team'})
+  get('/howitworks', { :controller => 'howitworks', :action => 'howitworks'})
+  get('/pricing', { :controller => 'pricing', :action => 'pricing'})
 
+  # ADMIN
   get('/inventory', { :controller => 'inventory', :action => 'inventory'})
+
+  # STYLISTS
+  get('/stylists/apply', { :controller => 'stylists', :action => 'apply'})
 
   get('/outfits/tops/select', { :controller => 'outfits', :action => 'select_top'})
   get('/outfits/tops/add', { :controller => 'outfits', :action => 'add_top'})
@@ -245,9 +250,6 @@ Rails.application.routes.draw do
 
   # DELETE
   get('/delete_outfit/:id', { :controller => 'outfits', :action => 'destroy' })
-
-  # About page:
-  get('/about', { :controller => 'about', :action => 'about'})
 
   #------------------------------
 

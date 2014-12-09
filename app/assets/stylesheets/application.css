@@ -25,6 +25,7 @@
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -36,8 +37,16 @@
   color: #b31;
 }
 
+.color2 {
+  color: #b31;
+}
+
 .navbar-inverse {
   background-color: #F8F8F8;
+}
+
+.navbar-right {
+  padding-right: 25px;
 }
 
 .offset1 {
@@ -52,6 +61,35 @@
   margin-top: 50px;
 }
 
+.offset4 {
+  margin-bottom: 100px;
+}
+
+.offset5 {
+  margin-top: 25px;
+}
+
 .row-centered {
   text-align: center;
+}
+
+.font1 {
+  font-family: 'Monoton', cursive;
+}
+
+.circle {
+  width: 350px;
+  height: 300px;
+}
+
+.circle2 {
+  width: 200px;
+  height: 175px;
+}
+
+.btn-sm {
+    margin: 1px;
+    /*padding: 18px 28px;
+    font-size: 22px;
+    border-radius: 8px;*/
 }
