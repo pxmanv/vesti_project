@@ -24,12 +24,12 @@
   <tbody>
     <% @shoes.each do |shoe| %>
       <tr>
-        <td><%= shoe.name.name %></td>
-        <td><%= shoe.designer.designer %></td>
-        <td><%= shoe.season.season %></td>
-        <td><%= shoe.fit.fit %></td>
+        <td><%= shoe.name.try(:name) %></td>
+        <td><%= shoe.designer.try(:designer) %></td>
+        <td><%= shoe.season.try(:season) %></td>
+        <td><%= shoe.fit.try(:fit) %></td>
         <td><%= shoe.color.try(:color) %></td>
-        <td><%= shoe.fabric.fabric %></td>
+        <td><%= shoe.fabric.try(:fabric) %></td>
         <td><%= shoe.occasion.try(:occasion) %></td>
         <td><img src="<%= shoe.image_url %>" width="30"></td>
         <td>

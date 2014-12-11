@@ -24,13 +24,13 @@
   <tbody>
     <% @accessories.each do |accessory| %>
       <tr>
-        <td><%= accessory.name.name %></td>
-        <td><%= accessory.designer.designer %></td>
-        <td><%= accessory.season.season %></td>
-        <td><%= accessory.fit.fit %></td>
+        <td><%= accessory.name.try(:name) %></td>
+        <td><%= accessory.designer.try(:designer) %></td>
+        <td><%= accessory.season.try(:season) %></td>
+        <td><%= accessory.fit.try(:fit) %></td>
         <td><%= accessory.color.try(:color) %></td>
-        <td><%= accessory.fabric.fabric %></td>
-        <td><%= accessory.occasion.occasion %></td>
+        <td><%= accessory.fabric.try(:fabric) %></td>
+        <td><%= accessory.occasion.try(:occasion) %></td>
         <td><img src="<%= accessory.image_url %>" width="30"></td>
         <td>
           <a href="/accessories/<%= accessory.id %>" class="btn btn-primary">

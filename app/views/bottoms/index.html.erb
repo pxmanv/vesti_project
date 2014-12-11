@@ -24,13 +24,13 @@
   <tbody>
     <% @bottoms.each do |bottom| %>
       <tr>
-        <td><%= bottom.name.name %></td>
-        <td><%= bottom.designer.designer %></td>
-        <td><%= bottom.season.season %></td>
-        <td><%= bottom.fit.fit %></td>
+        <td><%= bottom.name.try(:name) %></td>
+        <td><%= bottom.designer.try(:designer) %></td>
+        <td><%= bottom.season.try(:season) %></td>
+        <td><%= bottom.fit.try(:fit) %></td>
         <td><%= bottom.color.try(:color) %></td>
-        <td><%= bottom.fabric.fabric %></td>
-        <td><%= bottom.occasion.occasion %></td>
+        <td><%= bottom.fabric.try(:fabric) %></td>
+        <td><%= bottom.occasion.try(:occasion) %></td>
         <td><img src="<%= bottom.image_url %>" width="30"></td>
 
         <td>

@@ -24,13 +24,13 @@
   <tbody>
     <% @tops.each do |top| %>
       <tr>
-      <td><%= top.name.name %></td>
-        <td><%= top.designer.designer %></td>
-        <td><%= top.season.season %></td>
-        <td><%= top.fit.fit %></td>
+        <td><%= top.name.try(:name) %></td>
+        <td><%= top.designer.try(:designer) %></td>
+        <td><%= top.season.try(:season) %></td>
+        <td><%= top.fit.try(:fit) %></td>
         <td><%= top.color.try(:color) %></td>
-        <td><%= top.fabric.fabric %></td>
-        <td><%= top.occasion.occasion %></td>
+        <td><%= top.fabric.try(:fabric) %></td>
+        <td><%= top.occasion.try(:occasion) %></td>
         <td><img src="<%= top.image_url %>" width="30"></td>
         <td>
           <a href="/tops/<%= top.id %>" class="btn btn-primary">

@@ -38,12 +38,21 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
+
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/home"><i class="fa fa-home"></i></a></li>
+        <% if current_user.try(:character_id) == 0  %>
+        <li><a href="/feed">Feed</a></li>
+        <% end %>
+        <% if current_user.try(:character_id) == 1 %>
+        <li><a href="/outfits">Outfits</a></li>
+        <% end %>
+        <% if current_user.try(:character_id) == 2 %>
         <li><a href="/outfits">Outfits</a></li>
         <li><a href="/inventory">Inventory</a></li>
         <li><a href="/feed">Feed</a></li>
+        <% end %>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -89,7 +98,7 @@
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav navbar-right">
           <li>
           <a href="/pricing"><p class="text-muted">Pricing</p></a>
           </li>

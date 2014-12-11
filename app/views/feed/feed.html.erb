@@ -7,70 +7,71 @@
       </div>
     </div>
 
-     <% @user_outfits.each do |outfit| %>
+    <% @user_outfits.each do |outfit| %>
 
-    <div class="row offset7">
+    <div class="row offset9">
       <div class="row">
-      <div class="col-md-offset-1 col-md-9">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title"><%= outfit.updated_at %></h3>
-          </div>
-          <div class="panel-body">
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <img src="<%= outfit.top.image_url %>" class="image-over" alt="...">
-                <div class="caption">
-                  <h6 class="font2"><%= outfit.top.designer.designer %> <%= outfit.top.name.name %></h6>
-                  <p>#<%= outfit.top.season.season.downcase %> #<%= outfit.top.fit.fit.downcase %> #<%= outfit.top.fabric.fabric.downcase %></p>
+        <div class="col-md-offset-1 col-md-9">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= time_ago_in_words(outfit.updated_at) %> ago</h3>
+            </div>
+            <div class="panel-body">
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <img src="<%= outfit.top.image_url %>" class="image-over" alt="...">
+                  <div class="caption">
+                    <h6 class="font2"><%= outfit.top.designer.designer %> <%= outfit.top.name.name %></h6>
+                    <p>#<%= outfit.top.season.season.downcase %> #<%= outfit.top.fit.fit.downcase %> #<%= outfit.top.fabric.fabric.downcase %></p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <img src="<%= outfit.bottom.image_url %>" class="image-over" alt="...">
-                <div class="caption">
-                  <h6 class="font2"><%= outfit.bottom.designer.designer %> <%= outfit.bottom.name.name %></h6>
-                  <p>#<%= outfit.top.season.season.downcase %> #<%= outfit.top.fit.fit.downcase %> #<%= outfit.top.fabric.fabric.downcase %></p>
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <img src="<%= outfit.bottom.image_url %>" class="image-over" alt="...">
+                  <div class="caption">
+                    <h6 class="font2"><%= outfit.bottom.designer.designer %> <%= outfit.bottom.name.name %></h6>
+                    <p>#<%= outfit.top.season.season.downcase %> #<%= outfit.top.fit.fit.downcase %> #<%= outfit.top.fabric.fabric.downcase %></p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <img src="<%= outfit.outerwear.image_url %>" class="image-over" alt="...">
-                <div class="caption">
-                  <h6 class="font2"><%= outfit.outerwear.designer.designer %> <%= outfit.outerwear.name.name %></h6>
-                  <p>#<%= outfit.top.season.season.downcase %> #<%= outfit.top.fit.fit.downcase %> #<%= outfit.top.fabric.fabric.downcase %></p>
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <img src="<%= outfit.outerwear.image_url %>" class="image-over" alt="...">
+                  <div class="caption">
+                    <h6 class="font2"><%= outfit.outerwear.designer.designer %> <%= outfit.outerwear.name.name %></h6>
+                    <p>#<%= outfit.top.season.season.downcase %> #<%= outfit.top.fit.fit.downcase %> #<%= outfit.top.fabric.fabric.downcase %></p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <img src="<%= outfit.shoe.image_url %>" class="image-over" alt="...">
-                <div class="caption">
-                  <h6 class="font2"><%= outfit.shoe.designer.designer %> <%= outfit.shoe.name.name %></h6>
-                  <p>#<%= outfit.shoe.season.season.downcase %> #<%= outfit.shoe.fit.fit.downcase %> #<%= outfit.shoe.fabric.fabric.downcase %></p>
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <img src="<%= outfit.shoe.image_url %>" class="image-over" alt="...">
+                  <div class="caption">
+                    <h6 class="font2"><%= outfit.shoe.designer.designer %> <%= outfit.shoe.name.name %></h6>
+                    <p>#<%= outfit.shoe.season.season.downcase %> #<%= outfit.shoe.fit.fit.downcase %> #<%= outfit.shoe.fabric.fabric.downcase %></p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <img src="<%= outfit.accessory.image_url %>" class="image-over" alt="...">
-                <div class="caption">
-                  <h6 class="font2"><%= outfit.accessory.designer.designer %> <%= outfit.accessory.name.name %></h6>
-                  <p>#<%= outfit.accessory.season.season.downcase %> #<%= outfit.accessory.fit.fit.downcase %> #<%= outfit.accessory.fabric.fabric.downcase %></p>
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <img src="<%= outfit.accessory.image_url %>" class="image-over" alt="...">
+                  <div class="caption">
+                    <h6 class="font2"><%= outfit.accessory.designer.designer %> <%= outfit.accessory.name.name %></h6>
+                    <p>#<%= outfit.accessory.season.season.downcase %> #<%= outfit.accessory.fit.fit.downcase %> #<%= outfit.accessory.fabric.fabric.downcase %></p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-4">
-              <div class="input-group" >
-                <div class="form-inline">
-                  <input id="usercomments" type="textbox" placeholder="Comments" class="form-control" >
-                  <input class="btn btn-default " type="button" value="Submit" id="usercomments">
+              <div class="col-md-4">
+                <div class="input-group" >
+                  <div class="form-inline">
+                    <input id="usercomments" type="textbox" placeholder="Comments" class="form-control" >
+                    <input class="btn btn-default " type="button" value="Submit" id="usercomments">
+                  </div>
                 </div>
+                <p><a href="" class="btn btn-sm1 btn-default buttonStyle" role="button"><i class="fa fa-heart"></i></a><a href="" class="btn btn-sm1 btn-default" role="button">Meh</a></p>
               </div>
-              <p><a href="" class="btn btn-sm1 btn-default buttonStyle" role="button"><i class="fa fa-heart"></i></a><a href="" class="btn btn-sm1 btn-default" role="button">Meh</a></p>
             </div>
           </div>
         </div>

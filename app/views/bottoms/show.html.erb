@@ -4,25 +4,25 @@
 
 <dl class="dl-horizontal">
   <dt>Name</dt>
-  <dd><%= @bottom.name.name %></dd>
+  <dd><%= @bottom.name.try(:name) %></dd>
 
   <dt>Designer</dt>
-  <dd><%= @bottom.designer.designer %></dd>
+  <dd><%= @bottom.designer.try(:designer) %></dd>
 
   <dt>Season</dt>
-  <dd><%= @bottom.season.season %></dd>
+  <dd><%= @bottom.season.try(:season) %></dd>
 
   <dt>Fit</dt>
-  <dd><%= @bottom.fit.fit %></dd>
+  <dd><%= @bottom.fit.try(:fit) %></dd>
 
   <dt>Color</dt>
-  <dd><%= @bottom.color %></dd>
+  <dd><%= @bottom.color.try(:color) %></dd>
 
   <dt>Fabric</dt>
-  <dd><%= @bottom.fabric.fabric %></dd>
+  <dd><%= @bottom.fabric.try(:fabric) %></dd>
 
   <dt>Occasion</dt>
-  <dd><%= @bottom.occasion.occasion %></dd>
+  <dd><%= @bottom.occasion.try(:occasion) %></dd>
 
   <dt>Image</dt>
   <dd><img src="<%= @bottom.image_url %>" width="250"></dd>
