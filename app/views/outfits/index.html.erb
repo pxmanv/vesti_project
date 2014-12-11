@@ -18,14 +18,15 @@
     </tr>
   </thead>
 
+
   <tbody>
     <% @outfits.each do |outfit| %>
     <tr>
-      <td><img src="<%= outfit.top.image_url %>" width="100"></td>
-      <td><img src="<%= outfit.bottom.image_url %>" width="100"></td>
-      <td><img src="<%= outfit.outerwear.image_url %>" width="100"></td>
-      <td><img src="<%= outfit.shoe.image_url %>" width="100"></td>
-      <td><img src="<%= outfit.accessory.image_url %>" width="100"></td>
+      <td><img src="<%= outfit.top.image_url %>" class="image-over"></td>
+      <td><img src="<%= outfit.bottom.image_url %>" class="image-over"></td>
+      <td><img src="<%= outfit.outerwear.image_url %>" class="image-over"></td>
+      <td><img src="<%= outfit.shoe.try(:image_url) %>" class="image-over"></td>
+      <td><img src="<%= outfit.accessory.image_url %>" class="image-over"></td>
 
       <td>
         <a href="/outfits/<%= outfit.id %>" class="btn btn-primary">
@@ -43,14 +44,6 @@
         </a>
       </td>
       <td>
-        <form action="/feed">
-          <div class="form-group">
-            <label for="user_id" class="col-sm-2 control-label">
-              Users
-            </label>
-            <div class="col-sm-10">
-              <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email), :class => "form-control") %>
-              <button type="submit" class="btn btn-default">Submit</button>
             </div>
           </div>
         </form>

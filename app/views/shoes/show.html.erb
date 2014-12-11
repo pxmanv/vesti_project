@@ -16,7 +16,7 @@
   <dd><%= @shoe.fit.fit %></dd>
 
   <dt>Color</dt>
-  <dd><%= @shoe.color %></dd>
+  <dd><%= @shoe.color.try(:color) %></dd>
 
   <dt>Fabric</dt>
   <dd><%= @shoe.fabric.fabric %></dd>

@@ -79,7 +79,7 @@
     <% if @top %>
     <div class="col-md-3">
       <div class="thumbnail">
-        <img src="<%= @top.image_url %>" alt="...">
+        <img src="<%= @top.image_url %>" class="image-over" alt="...">
         <div class="caption">
           <h6><%= @top.designer.designer %> <%= @top.name.name %></h6>
           <p>#<%= @top.season.season.downcase %> #<%= @top.fit.fit.downcase %> #<%= @top.fabric.fabric.downcase %>
@@ -101,7 +101,7 @@
       <% if @bottom %>
       <div class="col-md-3">
         <div class="thumbnail">
-          <img src="<%= @bottom.image_url %>" alt="...">
+          <img src="<%= @bottom.image_url %>" class="image-over" alt="...">
           <div class="caption">
             <h6><%= @bottom.designer.designer %> <%= @bottom.name.name %></h6>
             <p>#<%= @bottom.season.season.downcase %> #<%= @bottom.fit.fit.downcase %> #<%= @bottom.fabric.fabric.downcase %>
@@ -123,7 +123,7 @@
         <% if @shoe %>
         <div class="col-md-3">
           <div class="thumbnail">
-            <img src="<%= @shoe.image_url %>" alt="...">
+            <img src="<%= @shoe.image_url %>" class="image-over" alt="...">
             <div class="caption">
               <h6><%= @shoe.designer.designer %> <%= @shoe.name.name %></h6>
               <p>#<%= @shoe.season.season.downcase %> #<%= @shoe.fit.fit.downcase %> #<%= @shoe.fabric.fabric.downcase %>
@@ -143,29 +143,19 @@
           <% end %>
 
           <div class="col-md-3">
-           <div class="btn-group">
-             <button type="button" class="btn btn-default btn-spacedown dropdown-toggle" data-toggle="dropdown">
-              Clients <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-                <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email), :class => "form-control") %>
-
-            </ul>
-          </div>
-
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Selections</h3>
             </div>
             <div class="panel-body">
               <form action="/create_outfit" class="form-horizontal">
+                <div class="form-group">
+                  <div class="col-md-2">
+                    <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email), :class => "form-control") %>
 
-              <div class="form-group">
-                <div class="col-md-2">
-                        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email), :class => "form-control") %>
+                  </div>
                 </div>
 
-              </div>
                 <!-- Label and input for top_id -->
                 <% if @top.present? %>
                 <div class="form-group">
@@ -265,7 +255,7 @@
                     <input type="text" id="accessory_id" name="accessory_id" placeholder="ID" class="form-control" value="">
                   </div>
                 </div>
-                <% end  %>
+                <% end %>
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
                     <input type="submit" value="Create Outfit" class="btn btn-primary">
@@ -280,11 +270,11 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row offset6">
         <% if @outerwear %>
         <div class="col-md-3">
           <div class="thumbnail">
-            <img src="<%= @outerwear.image_url %>" alt="...">
+            <img src="<%= @outerwear.image_url %>" class="image-over" alt="...">
             <div class="caption">
               <h6><%= @outerwear.designer.designer %> <%= @outerwear.name.name %></h6>
               <p>#<%= @outerwear.season.season.downcase %> #<%= @outerwear.fit.fit.downcase %> #<%= @outerwear.fabric.fabric.downcase %>
@@ -307,7 +297,7 @@
           <div class="row">
             <div class="col-md-3">
               <div class="thumbnail">
-                <img src="<%= @accessory.image_url %>" alt="...">
+                <img src="<%= @accessory.image_url %>" class="image-over" alt="...">
                 <div class="caption">
                   <h6><%= @accessory.designer.designer %> <%= @accessory.name.name %></h6>
                   <p>#<%= @accessory.season.season.downcase %> #<%= @accessory.fit.fit.downcase %> #<%= @accessory.fabric.fabric.downcase %>

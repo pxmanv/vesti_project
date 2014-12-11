@@ -30,7 +30,7 @@
         <td><%= shoe.fit.fit %></td>
         <td><%= shoe.color.try(:color) %></td>
         <td><%= shoe.fabric.fabric %></td>
-        <td><%= shoe.occasion %></td>
+        <td><%= shoe.occasion.try(:occasion) %></td>
         <td><img src="<%= shoe.image_url %>" width="30"></td>
         <td>
           <a href="/shoes/<%= shoe.id %>" class="btn btn-primary">

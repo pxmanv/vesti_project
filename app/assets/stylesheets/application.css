@@ -21,7 +21,7 @@
 }
 
 .full {
-  background: url(http://jamiedanielali.files.wordpress.com/2013/08/za2.jpg) no-repeat center center fixed;
+  background: url(http://www.giuliasantarelli.com/wp-content/uploads/2014/06/DSC_2642-copia.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -86,6 +86,10 @@
   margin-bottom: 50px;
 }
 
+.offset8 {
+  margin-top: 150px;
+}
+
 .row-centered {
   text-align: center;
 }
@@ -96,6 +100,10 @@
 
 .font2 {
   font-family: 'Lato', sans-serif, thin100;
+}
+
+.font3 {
+  font-family: 'Plaster', cursive;
 }
 
 .circle {
@@ -130,6 +138,15 @@
   margin-left: 30px;
 }
 
+.btn-howitworks {
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 45px;
+  width: 150px;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+
 
 .btn-sm2 {
     margin-right: 15px;
@@ -152,4 +169,22 @@
 
 .text-left {
   float:left;
+}
+
+.image-over {
+  max-height: 200px;
+  max-width: 100px;
+  overflow: hidden;
+}
+
+.image-small {
+  max-height: 150px;
+  max-width: 100px;
+  overflow: hidden;
+}
+
+.image-stylist {
+  max-height: 200px;
+  max-width: 200px;
+  overflow: hidden;
 }

@@ -104,6 +104,7 @@ class OutfitsController < ApplicationController
     @outfit.outerwear_id = params[:outerwear_id]
     @outfit.shoe_id = params[:shoe_id]
     @outfit.accessory_id = params[:accessory_id]
+    @outfit.user_id = params[:user_id]
 
     if @outfit.save
       redirect_to "/outfits", :notice => "Outfit created successfully."
@@ -124,6 +125,7 @@ class OutfitsController < ApplicationController
     @outfit.outerwear_id = params[:outerwear_id]
     @outfit.shoe_id = params[:shoe_id]
     @outfit.accessory_id = params[:accessory_id]
+    @outfit.user_id = params[:user_id]
 
     if @outfit.save
       redirect_to "/outfits", :notice => "Outfit updated successfully."

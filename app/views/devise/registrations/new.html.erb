@@ -1,29 +1,110 @@
-<h2>Sign up</h2>
+<!-- <body>
+  <div class="container">
+    <div class="row row-centered offset2">
+      <div class="col-md-9 col-md-offset-1">
+        <h1 class="font2">Find your sprezzy</h1>
+        <h1>connoisseur</h1>
+      </div>
+    </div>
+    <div class="row row-centered offset5 offset6">
+      <div class="col-md-9 col-md-offset-1">
+        <form class="navbar-form" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter your zip code...">
+          </div>
+          <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+    <div class="page-header">
+    </div>
+    <div class="row row-centered offset7 offset4">
+      <div class="col-md-9 col-md-offset-1">
+        <h1 class="font2">Still in lurk mode?</h1>
+        <h3 class="font2">Here's a few profiles of fan favorites.</h3>
+      </div>
+    </div>
+    <div class="row offset4">
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <img class="img-responsive image-stylist" src="https://images.vice.com/i-d/images/articles/meta/2014/11/17/thom-browne-the-interview-1416188077.jpg?crop=1xw:0.37532467532467534xh;0xw,0.033766233766233764xh&resize=700:*&output-format=image/jpeg&output-quality=90" alt="...">
+          <div class="caption">
+            <h4 class="font2">Thom, 42</h4>
+            <p><b>Location</b>: New York, NY<br>
+            <b>Occupation</b>: Head of Design, Thom Browne<br>
+            <b>Experience</b>: RL, Club Monaco, Armani<br>
+            <b>Favorite Designer</b>: Aaron Levine<br>
+            <b>Inspiration</b>: WW2 planes and Eames chairs</p>
+            <p><a href="/stylists/contact/stylist_id" class="btn btn-default" role="button">Contact</a> </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <img class="img-responsive image-stylist" src="http://www.fashiontrendsdaily.com/wp-content/uploads/2012/10/club-monaco02.jpeg" alt="...">
+          <div class="caption">
+            <h4 class="font2">Aaron, 36</h4>
+            <p><b>Location</b>: Austin, TX<br>
+            <b>Occupation</b>: Head of Design, Club Monaco<br>
+            <b>Experience</b>: J Crew, Suit Supply<br>
+            <b>Favorite Designer</b>: Brunello Cucinelli<br>
+            <b>Inspiration</b>: 1960's Omega Speedmaster</p>
+            <p><a href="/stylists/contact/stylist_id" class="btn btn-default" role="button">Contact</a> </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <img class="img-responsive image-stylist" src="http://www.gilt.com/giltmanual/wp-content/uploads/2010/09/Billy-Reid-facing.jpg" alt="...">
+          <div class="caption">
+            <h4 class="font2">Billy, 46</h4>
+            <p><b>Location</b>: Atlanta, GA<br>
+            <b>Occupation</b>: Head of Design, Billy Reid<br>
+            <b>Experience</b>: Piombo, Sid Mashburn<br>
+            <b>Favorite Designer</b>: Sid Mashburn<br>
+            <b>Inspiration</b>: Bulleit Rye</p>
+            <p><a href="/stylists/contact/stylist_id" class="btn btn-default" role="button">Contact</a> </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div> -->
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+<div class="container">
+  <div class="row row-centered offset3">
+  <div class="col-md-6 col-md-offset-3">
+      <h1 class="font2">Let's get you</h1>
+      <h1>signed up</h1>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @validatable %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>

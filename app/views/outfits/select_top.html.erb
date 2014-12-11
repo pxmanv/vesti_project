@@ -41,14 +41,14 @@
           </div>
         </div>
       </div> -->
-      <div class="row top-buffer">
+      <div class="row top-buffer offset6">
 
         <div class="row">
           <div class="col-md-9">
             <% @tops.each do |top| %>
             <div class="col-md-3">
               <div class="thumbnail">
-                <img src="<%= top.image_url %>" alt="...">
+              <img src="<%= top.image_url %>" class="image-small" alt="...">
                 <div class="caption">
                   <h6><%= top.designer.designer %> <%= top.name.name %></h6>
                   <p>#<%= top.season.season.downcase %> #<%= top.fit.fit.downcase %> #<%= top.color.color.downcase %> #<%= top.fabric.fabric.downcase %> #<%= top.occasion.occasion.downcase %></p>
@@ -145,17 +145,16 @@
                   </div>
                 </div>
                 <% end  %>
-
-                <ul class="nav navbar-nav navbar-right">
-                  <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Search for item...">
-                    </div>
-                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                  </form>
-                </ul>
               </div>
             </div>
+            <ul class="nav navbar-nav navbar-right">
+              <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search for item...">
+                </div>
+                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+              </form>
+            </ul>
           </div>
         </div>
       </body>
