@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get('/stylists/apply', { :controller => 'stylists', :action => 'apply'})
   get('/stylists/find', { :controller => 'stylists', :action => 'find'})
 
+  get('/clients', { :controller => 'clients', :action => 'clients'})
+
   get('/outfits/tops/select', { :controller => 'outfits', :action => 'select_top'})
   get('/outfits/tops/add', { :controller => 'outfits', :action => 'add_top'})
 

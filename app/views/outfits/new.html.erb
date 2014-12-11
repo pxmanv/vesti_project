@@ -11,68 +11,6 @@
   <h1>Add Outfit</h1>
 </div>
 
-<!-- <div class="row">
-  <div class="col-md-12">
-    <form action="/create_outfit" class="form-horizontal">
-      <!-- Label and input for top_id -->
-    <!--   <div class="form-group">
-        <label for="top_id" class="col-sm-2 control-label">
-          Top
-        </label>
-        <div class="col-sm-10">
-          <%= select_tag(:top_id, options_from_collection_for_select(Top.all, :id, :name, @outfit.top_id), :class => "form-control") %>
-        </div>
-      </div> -->
-
-      <!-- Label and input for bottom_id -->
-      <!-- <div class="form-group">
-        <label for="bottom_id" class="col-sm-2 control-label">
-          Bottom
-        </label>
-        <div class="col-sm-10">
-          <%= select_tag(:bottom_id, options_from_collection_for_select(Bottom.all, :id, :name, @outfit.bottom_id), :class => "form-control") %>
-        </div>
-      </div> -->
-
-      <!-- Label and input for outerwear_id -->
-   <!--    <div class="form-group">
-        <label for="outerwear_id" class="col-sm-2 control-label">
-          Outerwear
-        </label>
-        <div class="col-sm-10">
-          <%= select_tag(:outerwear_id, options_from_collection_for_select(Outerwear.all, :id, :name, @outfit.outerwear_id), :class => "form-control") %>
-        </div>
-      </div> -->
-
-      <!-- Label and input for shoe_id -->
-<!--       <div class="form-group">
-        <label for="shoe_id" class="col-sm-2 control-label">
-          Shoe
-        </label>
-        <div class="col-sm-10">
-          <%= select_tag(:shoe_id, options_from_collection_for_select(Shoe.all, :id, :name, @outfit.shoe_id), :class => "form-control") %>
-        </div> -->
-      </div>
-
-      <!-- Label and input for accessory_id -->
- <!--      <div class="form-group">
-        <label for="accessory_id" class="col-sm-2 control-label">
-          Accessory
-        </label>
-        <div class="col-sm-10">
-          <%= select_tag(:accessory_id, options_from_collection_for_select(Accessory.all, :id, :name, @outfit.accessory_id), :class => "form-control") %>
-        </div> -->
-      </div>
-<!--
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <input type="submit" value="Create Outfit" class="btn btn-primary">
-        </div>
-      </div>
-    </form>
-  </div>
-</div> -->
-
 <div class = "container">
 
   <div class="row">
@@ -155,7 +93,7 @@
                     </label>
                     <div class="col-sm-7 col-sm-offset-2"
                     <div class="col-sm-10">
-                      <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @outfit.user_id), :class => "form-control") %>
+                    <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @outfit.user_id), :class => "form-control") %>
                     </div>
                   </div>
 
@@ -321,4 +259,4 @@
               <% end %>
             </div>
           </div>
-        </div>
+

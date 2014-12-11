@@ -41,16 +41,18 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/home"><i class="fa fa-home"></i></a></li>
+        <li class="active">
+        <a href="/home"><i class="fa fa-home"></i></a></li>
         <% if current_user.try(:character_id) == 0  %>
         <li><a href="/feed">Feed</a></li>
         <% end %>
         <% if current_user.try(:character_id) == 1 %>
+        <li><a href="/clients">Clients</a></li>
         <li><a href="/outfits">Outfits</a></li>
         <% end %>
         <% if current_user.try(:character_id) == 2 %>
-        <li><a href="/outfits">Outfits</a></li>
         <li><a href="/inventory">Inventory</a></li>
+        <li><a href="/outfits">Outfits</a></li>
         <li><a href="/feed">Feed</a></li>
         <% end %>
       </ul>

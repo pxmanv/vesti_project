@@ -20,6 +20,10 @@
   background: none;
 }
 
+.nav-container {
+margin-top: 10px;
+}
+
 .full {
   background: url(http://www.giuliasantarelli.com/wp-content/uploads/2014/06/DSC_2642-copia.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
